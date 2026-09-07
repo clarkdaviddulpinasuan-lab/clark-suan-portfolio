@@ -544,6 +544,74 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
+   WEB APPS
+   ============================================================ */
+.applist {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.appcard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 30px;
+  transition: border-color .3s, transform .3s, background .3s;
+}
+.appcard:hover { border-color: var(--line-2); transform: translateY(-4px); background: var(--surface-2); }
+.appcard__cat {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.appcard h3 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  margin: 10px 0 0;
+}
+.appcard__desc { color: var(--muted); font-size: 14px; margin-top: 12px; flex: 1; }
+.appcard__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin-top: 20px;
+}
+.appcard__tech li {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 50px;
+  padding: 5px 11px;
+}
+.appcard__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.appcard__links a {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid transparent;
+  transition: color .25s, border-color .25s;
+}
+.appcard__links a:hover { color: var(--accent); border-color: var(--line-2); }
+
+/* ============================================================
    SERVICES
    ============================================================ */
 .services {
@@ -874,6 +942,7 @@ a { color: inherit; text-decoration: none; }
   .works,
   .services,
   .skills,
+  .applist,
   .contact { grid-template-columns: 1fr; }
   #works .section__note { position: static; text-align: left; margin-top: 10px; }
   .work--wide, .work--full { grid-column: auto; }

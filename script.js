@@ -137,9 +137,9 @@
   const filterBar = document.querySelector(".workfilter");
   if (filterBar) {
     const chips = [...filterBar.querySelectorAll(".workfilter__chip")];
-    const cards = [...document.querySelectorAll(".work[data-model], .cs[data-model]")];
+    const cards = [...document.querySelectorAll("main [data-model]")];
     const worksGrid = document.querySelector(".works");
-    const casesSec = document.getElementById("case-studies");
+    const sections = [...document.querySelectorAll("main .section")];
     const empty = document.querySelector(".works__empty");
 
     const apply = (filter) => {
@@ -149,8 +149,11 @@
         c.hidden = !match;
         if (match) shown += 1;
       });
-      if (worksGrid) worksGrid.hidden = !worksGrid.querySelector(".work[data-model]:not([hidden])");
-      if (casesSec) casesSec.hidden = !casesSec.querySelector(".cs[data-model]:not([hidden])");
+      if (worksGrid) worksGrid.hidden = !worksGrid.querySelector("[data-model]:not([hidden])");
+      sections.forEach((sec) => {
+        if (sec.id === "works") return; // keeps the filter bar visible
+        sec.hidden = !sec.querySelector("[data-model]:not([hidden])");
+      });
       if (empty) empty.hidden = shown > 0;
       chips.forEach((ch) => {
         const on = ch.dataset.filter === filter;
