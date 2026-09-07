@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clark Suan — Web Developer & UI Designer</title>
+  <meta name="description" content="Clark Suan — Shopify web developer and UI designer crafting conversion-focused ecommerce experiences with precise engineering and intentional design logic." />
+  <meta name="author" content="Clark Suan" />
+  <meta name="theme-color" content="#0a0a0b" />
+
+  <!-- Open Graph / social share -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Clark Suan — Web Developer & UI Designer" />
+  <meta property="og:description" content="Conversion-focused Shopify experiences with precise engineering and intentional design logic." />
+  <meta property="og:image" content="assets/portrait.jpg" />
+  <meta property="og:site_name" content="Clark Suan" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Clark Suan — Web Developer & UI Designer" />
+  <meta name="twitter:description" content="Conversion-focused Shopify experiences with precise engineering and intentional design logic." />
+  <meta name="twitter:image" content="assets/portrait.jpg" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0b'/%3E%3Ctext x='50' y='68' font-family='sans-serif' font-size='52' font-weight='700' fill='%23d8d3c8' text-anchor='middle'%3ECS%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <a href="index.html" class="nav__logo">CLARK SUAN</a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="works.html">Works</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero reveal">
+      <div class="hero__portrait">
+        <div class="portrait__frame">
+          <img src="assets/portrait.jpg" alt="Portrait of Clark Suan" onerror="this.style.display='none';this.parentElement.classList.add('portrait--fallback')" />
+          <div class="portrait__meta">
+            <span class="portrait__eyebrow">Portfolio 2026</span>
+            <h1 class="portrait__name">Clark<br />Suan</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__panels">
+        <article class="panel panel--intro">
+          <span class="eyebrow">Who I am</span>
+          <h2>Web Developer<br />&amp; UI Designer</h2>
+          <p>Crafting conversion-focused Shopify experiences with precise engineering and intentional design logic.</p>
+        </article>
+
+        <article class="panel panel--status">
+          <div>
+            <span class="eyebrow">Status</span>
+            <p class="status__text">Available for projects</p>
+          </div>
+          <span class="status__dot" aria-hidden="true"></span>
+        </article>
+
+        <a href="contact.html" class="panel panel--cta">
+          <div>
+            <p class="cta__title">Let's build something</p>
+            <span class="cta__sub">Start your project today</span>
+          </div>
+          <span class="cta__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section" id="services">
+      <header class="section__head reveal">
+        <span class="eyebrow">What I do</span>
+        <h2 class="section__title">Services</h2>
+      </header>
+
+      <div class="services">
+        <article class="service reveal" style="--i:0">
+          <span class="service__icon">◈</span>
+          <h3>End-to-End Shopify Store Development</h3>
+          <p>Have a project in mind? Drop me a message and let's create something exceptional.</p>
+          <div class="service__deliverables">
+            <span class="micro">Deliverables</span>
+            <p>Live store, theme files, product import, payment/shipping setup, admin walkthrough video.</p>
+          </div>
+        </article>
+
+        <article class="service reveal" style="--i:1">
+          <span class="service__icon">✦</span>
+          <h3>Shopify Store Redesign &amp; UX Overhaul</h3>
+          <p>Redesign an existing store to improve clarity, mobile-first UX, and conversion flow. Includes wireframes, UI mockups, and theme implementation.</p>
+          <div class="service__deliverables">
+            <span class="micro">Deliverables</span>
+            <p>Before/after UX audit, mockups, updated theme, mobile &amp; tablet tests.</p>
+          </div>
+        </article>
+
+        <article class="service reveal" style="--i:2">
+          <span class="service__icon">&lt;/&gt;</span>
+          <h3>Custom Shopify Sections &amp; Feature Builds (Liquid)</h3>
+          <p>Create bespoke theme sections, product templates, or interactive UI (product builders, dynamic bundles, lookbooks). Works within Shopify themes (Liquid).</p>
+          <div class="service__deliverables">
+            <span class="micro">Deliverables</span>
+            <p>Modular section code, installation guide, cross-theme compatibility notes.</p>
+          </div>
+        </article>
+
+        <article class="service reveal" style="--i:3">
+          <span class="service__icon">◐</span>
+          <h3>Private App Connect</h3>
+          <p>Connect private Shopify apps to extend functionality and automate workflows beyond base Shopify capabilities.</p>
+          <div class="service__deliverables">
+            <span class="micro">Deliverables</span>
+            <p>Integration plan, working integration, auth/documentation, automation expanding capability beyond base Shopify.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ PHILOSOPHY ============ -->
+    <section class="philosophy reveal">
+      <div class="philosophy__inner">
+        <span class="eyebrow">Philosophy</span>
+        <h2 class="philosophy__quote">Design is a system.</h2>
+        <p>It is the result of structured thinking, intentional decisions, and disciplined execution. Every pixel serves a purpose, and every line of code supports functionality. I design interfaces where aesthetics and usability operate in alignment, creating digital experiences that are coherent, efficient, and performance-driven. The most successful products do not rely on noise or ornamentation — they deliver clarity, consistency, and seamless interaction.</p>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <header class="section__head reveal">
+        <span class="eyebrow">Technical arsenal</span>
+        <h2 class="section__title">Core Capabilities</h2>
+      </header>
+
+      <div class="skills">
+        <article class="skillcard reveal" style="--i:0">
+          <h3>Shopify Architecture &amp; Store Engineering</h3>
+          <ul>
+            <li>Store System Setup &amp; Configuration</li>
+            <li>Product &amp; Catalog Architecture</li>
+            <li>Theme Implementation &amp; Customization</li>
+            <li>Data Migration &amp; Import Management</li>
+            <li>Integration Planning &amp; Technical Workflow Design</li>
+          </ul>
+        </article>
+
+        <article class="skillcard reveal" style="--i:1">
+          <h3>Shopify Frontend &amp; Custom Design</h3>
+          <ul>
+            <li>Liquid Development &amp; Theme Logic</li>
+            <li>Custom Section &amp; Component Engineering</li>
+            <li>Interactive UI &amp; Experience Enhancements</li>
+            <li>Frontend Optimization &amp; Code Refactoring</li>
+            <li>Debugging &amp; Cross-Device Rendering</li>
+          </ul>
+        </article>
+
+        <article class="skillcard reveal" style="--i:2">
+          <h3>Conversion-Focused Store Optimization</h3>
+          <ul>
+            <li>E-commerce UX Strategy &amp; Flow Design</li>
+            <li>Mobile-First Conversion Design</li>
+            <li>CRO Implementation (not theory)</li>
+            <li>Performance &amp; Perceived Speed Design</li>
+            <li>UX Audit &amp; Opportunity Identification</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section" id="experience">
+      <div class="experience reveal">
+        <span class="eyebrow">Experience</span>
+        <h2 class="experience__headline">2+ years of delivering impactful work</h2>
+        <p>I have designed and developed Shopify stores focused on performance, usability, and conversion. Each project has been an opportunity to translate business goals into functional digital experiences through thoughtful design, structured store architecture, and reliable code implementation. My approach centers on understanding real user behavior, solving practical e-commerce challenges, and building storefronts that not only look refined but operate efficiently to support growth and measurable results.</p>
+        <div class="experience__stats">
+          <div class="stat"><span class="stat__num">2+</span><span class="stat__label">Years experience</span></div>
+          <div class="stat"><span class="stat__num">20+</span><span class="stat__label">Stores shipped</span></div>
+          <div class="stat"><span class="stat__num">100%</span><span class="stat__label">Client focused</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Clark Suan. All rights reserved.</p>
+    <p>Built with precision and purpose</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Clark Suan</title>
+  <meta name="description" content="Start a project with Clark Suan — Shopify web developer and UI designer." />
+  <meta name="author" content="Clark Suan" />
+  <meta name="theme-color" content="#0a0a0b" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact — Clark Suan" />
+  <meta property="og:description" content="Have a project in mind? Let's create something exceptional." />
+  <meta property="og:image" content="assets/portrait.jpg" />
+  <meta property="og:site_name" content="Clark Suan" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0b'/%3E%3Ctext x='50' y='68' font-family='sans-serif' font-size='52' font-weight='700' fill='%23d8d3c8' text-anchor='middle'%3ECS%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <a href="index.html" class="nav__logo">CLARK SUAN</a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="works.html">Works</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="contact">
+        <div class="contact__intro reveal">
+          <span class="eyebrow">What I do</span>
+          <h2 class="section__title">Let's Talk</h2>
+          <p>Have a project in mind? Drop me a message and let's create something exceptional.</p>
+          <div class="contact__connect">
+            <span class="micro">Connect</span>
+            <div class="socials">
+              <a href="#" aria-label="LinkedIn">in / LinkedIn</a>
+              <a href="#" aria-label="Behance">Be / Behance</a>
+              <a href="#" aria-label="Dribbble">Dr / Dribbble</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ▸ SETUP: create a form at https://formspree.io and replace YOUR_FORM_ID below -->
+        <form class="contact__form reveal" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <label>
+            <span class="micro">Name</span>
+            <input type="text" name="name" autocomplete="name" required />
+          </label>
+          <label>
+            <span class="micro">Email</span>
+            <input type="email" name="email" autocomplete="email" required />
+          </label>
+          <label>
+            <span class="micro">Message</span>
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <input type="hidden" name="_subject" value="New project inquiry — Clark Suan portfolio" />
+          <button type="submit" class="btn">✉ Send Message</button>
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Clark Suan. All rights reserved.</p>
+    <p>Built with precision and purpose</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Works — Clark Suan</title>
+  <meta name="description" content="Selected Shopify stores and full-page UI design case studies by Clark Suan." />
+  <meta name="author" content="Clark Suan" />
+  <meta name="theme-color" content="#0a0a0b" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Works — Clark Suan" />
+  <meta property="og:description" content="Selected Shopify stores and full-page UI design case studies." />
+  <meta property="og:image" content="assets/portrait.jpg" />
+  <meta property="og:site_name" content="Clark Suan" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0b'/%3E%3Ctext x='50' y='68' font-family='sans-serif' font-size='52' font-weight='700' fill='%23d8d3c8' text-anchor='middle'%3ECS%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <a href="index.html" class="nav__logo">CLARK SUAN</a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="works.html" aria-current="page">Works</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- ============ WORKS ============ -->
+    <section class="section" id="works">
+      <header class="section__head reveal">
+        <span class="eyebrow">Selected works</span>
+        <h2 class="section__title">Recent Projects</h2>
+        <p class="section__note">A curated selection of Shopify stores built with precision and intent.</p>
+      </header>
+
+      <div class="workfilter reveal" role="group" aria-label="Filter projects by business model">
+        <span class="workfilter__label micro">Filter</span>
+        <button type="button" class="workfilter__chip is-active" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="workfilter__chip" data-filter="dtc" aria-pressed="false">DTC</button>
+        <button type="button" class="workfilter__chip" data-filter="dropshipping" aria-pressed="false">Drop Shipping</button>
+        <button type="button" class="workfilter__chip" data-filter="realestate" aria-pressed="false">Real Estate</button>
+      </div>
+
+      <div class="works">
+        <div class="work work--wide reveal" data-model="dropshipping" style="--i:0">
+          <div class="work__bg work__bg--watch"></div>
+          <div class="work__body">
+            <span class="work__index">E-commerce 01</span>
+            <h3 class="work__name">ZAMAN WATCH</h3>
+            <p class="work__desc">High-end horology marketplace built on Shopify with a custom product visualizer.</p>
+          </div>
+          <a href="work/zaman-watch.html" class="work__cover" aria-label="View Zaman Watch case study"></a>
+        </div>
+
+        <div class="work reveal" data-model="dropshipping" style="--i:1">
+          <div class="work__bg work__bg--nobo"></div>
+          <div class="work__body">
+            <span class="work__index">Fashion 02</span>
+            <h3 class="work__name">NOBO APPAREL</h3>
+            <p class="work__desc">Minimalist streetwear brand storefront featuring a seamless shopping experience.</p>
+          </div>
+          <a href="work/nobo-apparel.html" class="work__cover" aria-label="View Nobo Apparel case study"></a>
+        </div>
+
+        <div class="work work--full reveal" data-model="dtc" style="--i:2">
+          <div class="work__bg work__bg--lucci"></div>
+          <div class="work__body">
+            <span class="work__index">Luxury 03</span>
+            <h3 class="work__name">LUCCI MONTE</h3>
+            <p class="work__desc">Luxury accessory brand with an immersive editorial-style product layout.</p>
+          </div>
+          <a href="work/lucci-monte.html" class="work__cover" aria-label="View Lucci Monte case study"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CASE STUDIES ============ -->
+    <section class="section" id="case-studies">
+      <header class="section__head reveal">
+        <span class="eyebrow">Case Studies</span>
+        <h2 class="section__title">Design in Depth</h2>
+        <p class="section__note">Full-page UI designs. Hover a screen to scroll the layout — click to view full size.</p>
+      </header>
+
+      <div class="cases">
+
+        <!-- DanLovesHouses -->
+        <article class="cs reveal" data-model="realestate">
+          <div class="cs__head">
+            <div>
+              <span class="cs__cat">Real Estate · Web Design</span>
+              <h3 class="cs__title">DanLovesHouses</h3>
+              <p class="cs__desc">A conversion-focused website for a Chicago real-estate expert — built to turn 20 years of buying, selling, flipping, and investing credibility into booked consultations. Bold red-on-black identity, an interactive neighborhood explorer, video social proof, and testimonial walls throughout.</p>
+            </div>
+            <ul class="cs__tags">
+              <li>UI Design</li><li>Real Estate</li><li>Landing</li><li>Lead Gen</li>
+            </ul>
+          </div>
+          <div class="cs__gallery cs__gallery--3">
+            <figure class="frame" data-full="assets/work/danloveshouses-home.jpg">
+              <div class="frame__bar"><i></i><i></i><i></i><span>Home</span></div>
+              <div class="shot" style="--img:url('assets/work/danloveshouses-home.jpg')"></div>
+            </figure>
+            <figure class="frame" data-full="assets/work/danloveshouses-neighborhood.jpg">
+              <div class="frame__bar"><i></i><i></i><i></i><span>Neighborhoods</span></div>
+              <div class="shot" style="--img:url('assets/work/danloveshouses-neighborhood.jpg')"></div>
+            </figure>
+            <figure class="frame" data-full="assets/work/danloveshouses-investing.jpg">
+              <div class="frame__bar"><i></i><i></i><i></i><span>Investing</span></div>
+              <div class="shot" style="--img:url('assets/work/danloveshouses-investing.jpg')"></div>
+            </figure>
+          </div>
+        </article>
+
+        <!-- BTBHUB -->
+        <article class="cs reveal" data-model="dtc">
+          <div class="cs__head">
+            <div>
+              <span class="cs__cat">E-commerce · Web Design</span>
+              <h3 class="cs__title">BTBHUB</h3>
+              <p class="cs__desc">A full e-commerce experience for a trade bathroom supplier — <em>“bathroom supplies at trade prices.”</em> A clean green-and-cream system spanning a category-rich landing page, filterable collection grids, and a detailed product page with variant selection and layered review data.</p>
+            </div>
+            <ul class="cs__tags">
+              <li>E-commerce</li><li>Shopify</li><li>Product Page</li><li>UX</li>
+            </ul>
+          </div>
+          <div class="cs__gallery cs__gallery--3">
+            <figure class="frame" data-full="assets/work/btbhub-home.jpg">
+              <div class="frame__bar"><i></i><i></i><i></i><span>Landing</span></div>
+              <div class="shot" style="--img:url('assets/work/btbhub-home.jpg')"></div>
+            </figure>
+            <figure class="frame" data-full="assets/work/btbhub-collection.jpg">
+              <div class="frame__bar"><i></i><i></i><i></i><span>Collection</span></div>
+              <div class="shot" style="--img:url('assets/work/btbhub-collection.jpg')"></div>
+            </figure>
+            <figure class="frame" data-full="assets/work/btbhub-product.jpg">
+              <div class="frame__bar"><i></i><i></i><i></i><span>Product</span></div>
+              <div class="shot" style="--img:url('assets/work/btbhub-product.jpg')"></div>
+            </figure>
+          </div>
+        </article>
+
+        <!-- Balterley -->
+        <article class="cs reveal" data-model="dtc">
+          <div class="cs__head">
+            <div>
+              <span class="cs__cat">Luxury Retail · Web Design</span>
+              <h3 class="cs__title">Balterley</h3>
+              <p class="cs__desc">A luxury storefront concept for premium kitchen &amp; bathroom fixtures — <em>“the art of living well.”</em> An editorial, gallery-style layout with serif display type, a warm neutral palette, and curated collections that let the brass and marble products lead.</p>
+            </div>
+            <ul class="cs__tags">
+              <li>E-commerce</li><li>Luxury</li><li>Editorial</li><li>Branding</li>
+            </ul>
+          </div>
+          <div class="cs__gallery cs__gallery--1">
+            <figure class="frame" data-full="assets/work/balterley-home.jpg">
+              <div class="frame__bar"><i></i><i></i><i></i><span>Home</span></div>
+              <div class="shot shot--tall" style="--img:url('assets/work/balterley-home.jpg')"></div>
+            </figure>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <p class="works__empty" hidden>No projects in this category yet — <a href="contact.html">start one</a>.</p>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Clark Suan. All rights reserved.</p>
+    <p>Built with precision and purpose</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
