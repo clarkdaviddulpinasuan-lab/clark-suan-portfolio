@@ -86,5 +86,5 @@ That's it. Re-run `npx vercel --prod` any time you change files.
 
 ## Before you deploy — checklist
 - [ ] Save your headshot as `assets/portrait.jpg`
-- [ ] Replace `YOUR_FORM_ID` in `contact.html` with your Formspree ID
+- [ ] Set up the contact form's Google Sheets + email env vars — see [CONTACT-SETUP.md](CONTACT-SETUP.md)
 - [ ] Swap placeholder case-study metrics for real numbers (optional)

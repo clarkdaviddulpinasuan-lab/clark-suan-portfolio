@@ -2,6 +2,24 @@
 (() => {
   "use strict";
 
+  /* ▸ SETUP: fill these in — see CONTACT-SETUP.md */
+  const CONTACT_CONFIG = {
+    emailjs: {
+      publicKey: "YOUR_EMAILJS_PUBLIC_KEY",
+      serviceId: "YOUR_EMAILJS_SERVICE_ID",
+      ownerTemplateId: "YOUR_EMAILJS_OWNER_TEMPLATE_ID",
+      autoreplyTemplateId: "YOUR_EMAILJS_AUTOREPLY_TEMPLATE_ID",
+    },
+    googleForm: {
+      // e.g. "https://docs.google.com/forms/d/e/1FAIpQLS.../formResponse"
+      actionUrl: "YOUR_GOOGLE_FORM_RESPONSE_URL",
+      // entry.XXXXXXX ids from the Google Form's fields
+      nameField: "YOUR_NAME_ENTRY_ID",
+      emailField: "YOUR_EMAIL_ENTRY_ID",
+      messageField: "YOUR_MESSAGE_ENTRY_ID",
+    },
+  };
+
   const nav = document.querySelector(".nav");
   const toggle = document.querySelector(".nav__toggle");
   const links = document.querySelector(".nav__links");
@@ -78,11 +96,30 @@
     });
   }
 
-  /* --- contact form → Formspree --- */
+  /* --- contact form → EmailJS (both emails) + Google Form (spreadsheet log) --- */
   const form = document.getElementById("contactForm");
   if (form) {
     const status = form.querySelector(".form__status");
     const btn = form.querySelector("button[type=submit]");
+    const cfg = CONTACT_CONFIG;
+    const configured =
+      window.emailjs &&
+      !cfg.emailjs.publicKey.startsWith("YOUR_") &&
+      !cfg.emailjs.serviceId.startsWith("YOUR_") &&
+      !cfg.emailjs.ownerTemplateId.startsWith("YOUR_");
+
+    if (configured) emailjs.init({ publicKey: cfg.emailjs.publicKey });
+
+    // Fire-and-forget log to the linked Google Sheet via the Form's endpoint.
+    // no-cors means we can't read the response, but the submission still lands.
+    function logToSheet({ name, email, message }) {
+      if (cfg.googleForm.actionUrl.startsWith("YOUR_")) return;
+      const data = new FormData();
+      data.append(cfg.googleForm.nameField, name);
+      data.append(cfg.googleForm.emailField, email);
+      data.append(cfg.googleForm.messageField, message);
+      fetch(cfg.googleForm.actionUrl, { method: "POST", mode: "no-cors", body: data }).catch(() => {});
+    }
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -93,12 +130,13 @@
         return;
       }
 
-      // Not configured yet — fall back to a friendly demo confirmation.
-      if (form.action.includes("YOUR_FORM_ID")) {
-        const name = form.elements.name.value.trim().split(" ")[0] || "there";
+      const name = form.elements.name.value.trim();
+      const email = form.elements.email.value.trim();
+      const message = form.elements.message.value.trim();
+
+      if (!configured) {
         status.style.color = "#facc15";
-        status.textContent = `Demo mode, ${name}: add your Formspree ID in index.html to send for real.`;
-        form.reset();
+        status.textContent = `Demo mode, ${name.split(" ")[0] || "there"}: add your EmailJS/Google Form IDs in script.js to send for real.`;
         return;
       }
 
@@ -108,24 +146,29 @@
       status.style.color = "";
       status.textContent = "";
 
+      logToSheet({ name, email, message });
+
       try {
-        const res = await fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-          headers: { Accept: "application/json" },
+        await emailjs.send(cfg.emailjs.serviceId, cfg.emailjs.ownerTemplateId, {
+          from_name: name,
+          from_email: email,
+          message,
         });
-        if (res.ok) {
-          const name = form.elements.name.value.trim().split(" ")[0] || "there";
-          status.style.color = "";
-          status.textContent = `Thanks, ${name} — your message is on its way. I'll be in touch soon.`;
-          form.reset();
-        } else {
-          const data = await res.json().catch(() => ({}));
-          throw new Error(data?.errors?.[0]?.message || "Request failed");
+
+        if (!cfg.emailjs.autoreplyTemplateId.startsWith("YOUR_")) {
+          await emailjs.send(cfg.emailjs.serviceId, cfg.emailjs.autoreplyTemplateId, {
+            to_email: email,
+            to_name: name,
+            message,
+          });
         }
+
+        status.style.color = "";
+        status.textContent = `Thanks, ${name.split(" ")[0] || "there"} — your message is on its way. I'll be in touch soon.`;
+        form.reset();
       } catch (err) {
         status.style.color = "#f87171";
-        status.textContent = "Something went wrong — please email admin@getfudogroup.com directly.";
+        status.textContent = "Something went wrong — please email clarklindleysuan@gmail.com directly.";
       } finally {
         btn.disabled = false;
         btn.textContent = label;

@@ -56,8 +56,7 @@
           </div>
         </div>
 
-        <!-- ▸ SETUP: create a form at https://formspree.io and replace YOUR_FORM_ID below -->
-        <form class="contact__form reveal" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+        <form class="contact__form reveal" id="contactForm" novalidate>
           <label>
             <span class="micro">Name</span>
             <input type="text" name="name" autocomplete="name" required />
@@ -70,7 +69,6 @@
             <span class="micro">Message</span>
             <textarea name="message" rows="4" required></textarea>
           </label>
-          <input type="hidden" name="_subject" value="New project inquiry — Clark Suan portfolio" />
           <button type="submit" class="btn">✉ Send Message</button>
           <p class="form__status" role="status" aria-live="polite"></p>
         </form>
@@ -83,6 +81,7 @@
     <p>Built with precision and purpose</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
