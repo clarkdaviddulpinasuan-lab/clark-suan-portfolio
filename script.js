@@ -62,6 +62,19 @@
     reveals.forEach((el) => el.classList.add("in"));
   }
 
+  /* --- testimonials marquee: clone the row for a seamless loop --- */
+  const marquee = document.querySelector(".marquee");
+  if (marquee) {
+    const track = marquee.querySelector(".marquee__track");
+    const group = track && track.firstElementChild;
+    if (group) {
+      const clone = group.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      track.appendChild(clone);
+      marquee.classList.add("is-ready");
+    }
+  }
+
   /* --- case-study lightbox --- */
   const frames = document.querySelectorAll(".frame[data-full]");
   if (frames.length) {
